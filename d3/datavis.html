@@ -1,0 +1,38 @@
+<html>
+
+<head>
+<script src="http://d3js.org/d3.v2.js"></script>
+</head>
+<body>
+
+<style type = "text/css">
+.chart div {
+font: 10px sans-serif;
+background-color: steelblue;
+text-align: right;
+padding: 3px;
+margin: 1px;
+color: white;
+}
+</style>
+
+<script type = "text/javascript">
+
+ var chart = d3.select("body").append("div")
+.attr("class", "chart")
+
+
+var data = [[69272, 'Maryland'], [68342, 'New Jersey'], [67034, 'Connecticut'], [66953, 'Alaska'], [64098, 'Hawaii']];
+
+
+chart.selectAll("div")
+.data(data)
+.enter().append("div")
+.style("width", function(d) { return d[0] / 100 + "px"; })
+.text(function(d) { return d; });
+</script>
+
+
+
+</body>
+</html>
